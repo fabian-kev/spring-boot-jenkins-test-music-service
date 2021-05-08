@@ -13,35 +13,25 @@ pipeline {
         }
 
         stage('Building Jar') {
-//             def home = tool name: '6.7', type: 'gradle'
-
-
             steps {
                 script {
                         def home = tool name: '6.7', type: 'gradle'
-                                 bat "${home}/bin/gradle clean build"
+                         bat "${home}/bin/gradle clean build"
                 }
 
             }
         }
 
-        stage('Building Image') {
+        stage('Building and Pushing Image') {
             steps {
                 script {
-                     dockerImage = docker.build registry = + ":$BUILD_NUMBER"
+                     bat "docker build -t localhost:5000/music-service:${BUILD_NUMBER}"
+                     bat "docker push localhost:5000/music-service:${BUILD_NUMBER}"
                 }
             }
         }
 
-        stage("Pushing the image") {
-            steps {
-                script {
-                    docker.withRegistry( "" ) {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
+
     }
 
 }
