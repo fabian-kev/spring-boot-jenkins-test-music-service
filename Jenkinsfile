@@ -32,7 +32,7 @@ pipeline {
 
         stage('Deploy to Cluster') {
             steps {
-               kubernetesDeploy configs: 'music-service.yml', kubeconfigId: 'mykubernetes']
+               kubernetesDeploy configs: 'music-service.yml', kubeconfigId: 'mykubernetes'
             }
 
         }
