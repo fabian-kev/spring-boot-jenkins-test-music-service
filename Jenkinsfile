@@ -30,6 +30,13 @@ pipeline {
             }
         }
 
+        stage('Deploy to Cluster') {
+            steps {
+                "k apply -f music-service.yml"
+            }
+
+        }
+
 
     }
 
