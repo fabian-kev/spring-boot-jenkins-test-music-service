@@ -6,7 +6,7 @@ pipeline {
     agent: any
 
 
-    stage {
+    stages {
         stage('Checkout Source') {
              steps {
                 git 'https://github.com/fabian-kev/spring-boot-jenkins-test-music-service.git'
