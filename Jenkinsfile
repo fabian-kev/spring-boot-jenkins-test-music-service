@@ -3,9 +3,7 @@ pipeline {
         registry = "localhost:5000/music-service"
         dockerImage = "";
     }
-    agent: any
-
-
+//     agent: any
     stages {
         stage('Checkout Source') {
              steps {
