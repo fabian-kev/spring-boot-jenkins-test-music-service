@@ -24,10 +24,9 @@ pipeline {
 
         stage('Building and Pushing Image') {
             steps {
-                script {
-                     bat "docker build -t localhost:5000/music-service:${BUILD_NUMBER}"
-                     bat "docker push localhost:5000/music-service:${BUILD_NUMBER}"
-                }
+            bat "docker build -t localhost:5000/music-service:${BUILD_NUMBER}"
+                                 bat "docker push localhost:5000/music-service:${BUILD_NUMBER}"
+
             }
         }
 
