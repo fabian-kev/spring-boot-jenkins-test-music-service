@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "localhost:5000/tmp"
+        registry = "localhost:5000/music-service"
         dockerImage = "";
     }
     agent: any
