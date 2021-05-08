@@ -32,7 +32,7 @@ pipeline {
 
         stage('Deploy to Cluster') {
             steps {
-                bat "k apply -f music-service.yml"
+                bat "kubectl apply -f music-service.yml"
             }
 
         }
