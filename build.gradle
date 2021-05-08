@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.4.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+//    id 'com.google.cloud.tools.jib' version '3.0.0'
 }
 
 group = 'com.fabiankevin.music'
@@ -42,3 +43,26 @@ dependencyManagement {
 test {
     useJUnitPlatform()
 }
+
+//tasks {
+//	build {
+//		dependsOn(tasks.jib)
+//	}
+//}
+
+//jib {
+//	from {
+//		image = 'openjdk:8-jdk-alpine'
+//	}
+//	to {
+//		image = "${rootProject.name}"
+//        tags = ['localhost:5000']
+////		tags = ['latest', project.version]
+//	}
+//	container {
+//		jvmFlags = ['-Xms360m', '-Xmx360m']
+//		ports = ['90']
+//		creationTime = 'USE_CURRENT_TIMESTAMP'
+//	}
+//	allowInsecureRegistries = false
+//}
