@@ -13,9 +13,15 @@ pipeline {
         }
 
         stage('Building Jar') {
-            def home = tool name: '6.7', type: 'gradle'
+//             def home = tool name: '6.7', type: 'gradle'
+
+
             steps {
-                 bat "${home}/bin/gradle clean build"
+                script {
+                        def home = tool name: '6.7', type: 'gradle'
+                                 bat "${home}/bin/gradle clean build"
+                }
+
             }
         }
 
